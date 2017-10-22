@@ -24,6 +24,21 @@ Exemplo: Se o robô está na posição `(0,0,N)`, o comando `MML` fará ele cheg
 
 ## Aplicação
 ### Tecnologias
+
+Para o desenvolvimento da aplicação foram utilizadas as seguintes stack:
+
 * Java 8
 * Maven
 * Docker e Docker Compose (Opcionais)
+
+### Executando
+### Via JAR
+
+Primeiro vamos precisar executar o comanndo para que o maven baixe as dependencias necessárias para o projeto e faça o build da aplicação. Acesse a raiz do projeto e execute:
+
+```sh
+#/mars-robot/
+$ mvn clean install
+```
+
+
