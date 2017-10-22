@@ -76,7 +76,7 @@ $ POST http://localhost:8080/api/mars-robot/moveto/{command}
 #Exmplo: http://localhost:8080/api/mars-robot/moveto/MML
 ```
 
-Parâmetros
+#### Parâmetros
 | Nome | Valor |
-| ------ | ------ |
+| ---- | ----- |
 | command | Uma string simples, que pode conter as letras L, R e M. Exemplo: `MML` |
