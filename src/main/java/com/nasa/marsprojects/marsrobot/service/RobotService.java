@@ -17,13 +17,13 @@ public class RobotService {
 	
 	private RobotFactory robotFactory;
 	
-	public Robot moveTo(String command) {
-		Robot robot = this.robotFactory.create();
-		this.commandParse.parseToAction(command)
-			.forEach(action ->{
-				action.apply(robot);
-				this.boundaryValidator.validateBoundary(robot.getArea(), robot.getCoordinate());
-			});
+	public Robot moveTo(final String command) {
+		Robot robot = robotFactory.create();
+			commandParse.parseToActions(command)
+						.forEach(action ->{
+							action.apply(robot);
+							boundaryValidator.validateBoundary(robot.getArea(), robot.getCoordinate());
+						});
 		return robot;
 	}
 	

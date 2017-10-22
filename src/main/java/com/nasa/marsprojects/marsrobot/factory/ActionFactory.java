@@ -15,12 +15,16 @@ import com.nasa.marsprojects.marsrobot.exception.CommandInvalidException;
 @Component
 public class ActionFactory {
 	
+	private static final Character LEFT = 'L';
+	private static final Character MOVE = 'M';
+	private static final Character RIGHT = 'R';
+	
 	private static Map<Character, IAction> actions = registerActions();
 	
 	public ActionFactory() {
 	}
 
-	public IAction get(char code) {
+	public IAction get(final char code) {
 		IAction action = actions.get(code);
 		if(ObjectUtils.isEmpty(action)) {
 			throw new CommandInvalidException();
@@ -30,9 +34,9 @@ public class ActionFactory {
 	
 	private static Map<Character, IAction> registerActions() {
 		actions = new HashMap<>();
-		actions.put('L', new LeftAction());
-		actions.put('R', new RightAction());
-		actions.put('M', new MoveAction());
+		actions.put(LEFT, new LeftAction());
+		actions.put(RIGHT, new RightAction());
+		actions.put(MOVE, new MoveAction());
 		return actions;
 	}
 }

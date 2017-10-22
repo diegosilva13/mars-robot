@@ -19,24 +19,24 @@ public class ControllerExceptionHandler {
 	private MessageSource messageSource;
 	
 	@ExceptionHandler(CommandInvalidException.class)
-    public ResponseEntity<?> commandInvalidExceptionHandler(HttpServletRequest req, CommandInvalidException ex){
-		String message = this.getMessage(ex.getKeyMessage());
+    public ResponseEntity<?> commandInvalidExceptionHandler(HttpServletRequest req, final CommandInvalidException ex){
+		String message = getMessage(ex.getKeyMessage());
 		return ResponseEntity.badRequest().body(message);
     }
 	
 	@ExceptionHandler(ExceededBoundaryException.class)
-    public ResponseEntity<?> exceededBoundaryExceptionHandler(HttpServletRequest req, ExceededBoundaryException ex){
-        String message = this.getMessage(ex.getKeyMessage());
+    public ResponseEntity<?> exceededBoundaryExceptionHandler(HttpServletRequest req, final ExceededBoundaryException ex){
+        String message = getMessage(ex.getKeyMessage());
         return ResponseEntity.badRequest().body(message);
     }
 	
 	@ExceptionHandler(Exception.class)
     public ResponseEntity<?> exceptionHandler(){
-        String message = this.getMessage("error.unexpected");
+        String message = getMessage("error.unexpected");
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
     }
 	
-	private String getMessage(String key) {
-       return this.messageSource.getMessage(key, null, null);
+	private String getMessage(final String key) {
+       return messageSource.getMessage(key, null, null);
     }
 }

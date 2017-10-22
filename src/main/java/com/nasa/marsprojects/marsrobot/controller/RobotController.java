@@ -18,7 +18,7 @@ public class RobotController {
     private RobotService robotService;
 
     @RequestMapping(value = "/mars/{command}", method = RequestMethod.POST)
-    public ResponseEntity<?> moveTo(@PathVariable String command) {
+    public ResponseEntity<?> moveTo(@PathVariable final String command) {
         Robot robot = robotService.moveTo(command);
         return ResponseEntity.ok(robot.toString());
     }

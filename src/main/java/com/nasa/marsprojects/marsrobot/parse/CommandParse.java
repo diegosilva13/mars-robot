@@ -14,9 +14,9 @@ public class CommandParse {
 	
 	private ActionFactory actionFactory;
 	
-	public List<IAction> parseToAction(final String command) {
+	public List<IAction> parseToActions(final String command) {
 		return command.chars()
-						.mapToObj(act -> this.actionFactory.get((char) act))
+						.mapToObj(act -> actionFactory.get((char) act))
 						.collect(Collectors.toList());
 	}
 	
