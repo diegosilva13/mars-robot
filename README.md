@@ -40,5 +40,15 @@ Primeiro vamos precisar executar o comanndo para que o maven baixe as dependenci
 #/mars-robot/
 $ mvn clean install
 ```
+Após a finalização vamos executar a aplicação, aqui temos duas opções, executando na raiz do projeto o seguinte comando
 
+```sh
+#/mars-robot/
+$  mvn spring-boot:run
+```
+ou acessando a pasta target e executando diretament o *jar* gerado
 
+```sh
+#/mars-robot/target/
+$  java -jar mars-robot-0.0.1-SNAPSHOT.jar
+```
