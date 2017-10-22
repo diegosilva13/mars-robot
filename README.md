@@ -68,7 +68,7 @@ Após finalizado execute o próximo comando para criar o container com a aplica�
 $  docker-compose up
 ```
 
-## Rest
+## Api Rest
 
 O Foi disponibilizado o seguinte endpoint rest para possibilitar controlar o Robô:
 ```sh
