@@ -72,9 +72,11 @@ $  docker-compose up
 
 O Foi disponibilizado o seguinte endpoint rest para possibilitar controlar o Robô:
 ```sh
-$ Post http://localhost:8080/api/mars-robot/moveto/{command}
-#Exmplo de chamada: http://localhost:8080/api/mars-robot/moveto/MML
+$ POST http://localhost:8080/api/mars-robot/moveto/{command}
+#Exmplo: http://localhost:8080/api/mars-robot/moveto/MML
 ```
 
 Parâmetros
-
+| Nome | Valor |
+| ------ | ------ |
+| command | Uma string simples, que pode conter as letras L, R e M. Exemplo: `MML` |
