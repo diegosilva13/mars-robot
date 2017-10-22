@@ -79,4 +79,14 @@ $ POST http://localhost:8080/api/mars-robot/moveto/{command}
 #### Parâmetros
 | Nome | Valor |
 | ---- | ----- |
-| command | Uma string simples, que pode conter as letras L, R e M. Exemplo: `MML` |
+| `command` | Uma string simples, que pode conter as letras L, R e M. Exemplo: `MML` |
+
+Responstas
+
+| Código | Quando ocorre | Resposta |
+| ---- | ----- | ----- |
+| 200 | Quano o robô é movimentado com sucesso, sua posição é retornada | `(0,2,W)` |
+| 400 | Quando passado um comando inválido | Um ou mais comandos informado estão inválido. |
+| 400 | Quando o robô excede os limites da área. | O robô excedeu os limites da área configurada. |
+| 500 | Quando ocorre um erro inesperado no servidor | Ocorreu um erro inesperado, por favor entre em contato com o suporte técnico. |
+
