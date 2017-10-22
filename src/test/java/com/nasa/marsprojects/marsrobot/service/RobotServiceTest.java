@@ -53,9 +53,35 @@ public class RobotServiceTest {
 		assertEquals("(1, 3, N)", robot.toString());
 	}
 	
+	@Test
+	public void shouldMoveTo5X3SouthPosition() {
+		String command = "MMRMLMMMRMMMMRMM";
+		Robot robot = robotService.moveTo(command);
+		assertEquals("(5, 3, S)", robot.toString());
+	}
+	
+	@Test
+	public void shouldMoveTo5X0SouthPosition() {
+		String command = "MMRMLMMMRMMMMRMMMMM";
+		Robot robot = robotService.moveTo(command);
+		assertEquals("(5, 0, S)", robot.toString());
+	}
+	
 	@Test(expected = ExceededBoundaryException.class)
 	public void shouldThrowExceededBoundaryException() {
 		String command = "MMMMMMMMMMMMMMMMMMMMMMMM";
+		robotService.moveTo(command);
+	}
+	
+	@Test(expected = ExceededBoundaryException.class)
+	public void shouldThrowExceededBoundaryExceptionInX() {
+		String command = "MMRMLMMMRMMMMRMLM";
+		robotService.moveTo(command);
+	}
+	
+	@Test(expected = ExceededBoundaryException.class)
+	public void shouldThrowExceededBoundaryExceptionInX1a() {
+		String command = "MMRMLMMMLMM";
 		robotService.moveTo(command);
 	}
 	

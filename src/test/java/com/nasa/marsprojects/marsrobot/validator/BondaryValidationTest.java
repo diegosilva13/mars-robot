@@ -29,6 +29,7 @@ public class BondaryValidationTest {
 
 	@Test(expected = ExceededBoundaryException.class)
 	public void shouldExceededBoundaryInXOfBase() {
+		coordinate.setY(COORDINATE_Y_INIT);
 		coordinate.setX(-1);
 		boundaryValidator.validateBoundary(area, coordinate);
 	}
@@ -53,6 +54,8 @@ public class BondaryValidationTest {
 		coordinate.setY(MAX_Y_COORDINATE + 1);
 		boundaryValidator.validateBoundary(area, coordinate);
 	}
+	
+	
 
 	private void initArea() {
 		Coordinate baseOfArea = new Coordinate(COORDINATE_X_INIT, COORDINATE_Y_INIT);
