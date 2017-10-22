@@ -11,13 +11,13 @@ import com.nasa.marsprojects.marsrobot.model.Robot;
 import com.nasa.marsprojects.marsrobot.service.RobotService;
 
 @RestController
-@RequestMapping("rest")
+@RequestMapping("/robot")
 public class RobotController {
 	
 	@Autowired
     private RobotService robotService;
 
-    @RequestMapping(value = "/mars/{command}", method = RequestMethod.POST)
+    @RequestMapping(value = "/moveto/{command}", method = RequestMethod.POST)
     public ResponseEntity<?> moveTo(@PathVariable final String command) {
         Robot robot = robotService.moveTo(command);
         return ResponseEntity.ok(robot.toString());
