@@ -1,0 +1,25 @@
+package com.nasa.marsprojects.marsrobot.model;
+
+import java.io.Serializable;
+
+public class Area implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	private Coordinate baseOfArea;
+	private Coordinate topOfArea;
+	
+	public Area(Coordinate topOfArea, Coordinate baseOfArea) {
+		super();
+		this.topOfArea = topOfArea;
+		this.baseOfArea = baseOfArea;
+	}
+
+	public Coordinate getBaseOfArea() {
+		return baseOfArea;
+	}
+	
+	public Coordinate getTopOfArea() {
+		return topOfArea;
+	}
+}
