@@ -13,15 +13,19 @@ import com.nasa.marsprojects.marsrobot.model.Robot;
 public class RobotFactory {
 	
 	private AreaFactory areaFactory;
+	
 	private Integer coordinateXInit;
+	
 	private Integer coordinateYInit;
+	
 	private String id;
+	
 	private Position position;
 	
 	public Robot create() {
 		Coordinate coordinate = new  Coordinate(coordinateXInit, coordinateYInit);
-		Area area = this.areaFactory.create();
-		return new Robot(area, this.position, coordinate, this.id);
+		Area area = areaFactory.create();
+		return new Robot(area, position, coordinate, id);
 	}
 	
 	@Autowired

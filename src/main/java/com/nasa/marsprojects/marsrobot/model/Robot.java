@@ -15,9 +15,12 @@ public class Robot implements Serializable{
 	private Area area;
 	
 	private String id;
-
+	
+	public Robot() {
+	}
+	
 	public Robot(Area area, Position position, Coordinate coordinate, String id) {
-		super();
+		this();
 		this.position = position;
 		this.coordinate = coordinate;
 		this.id = id;

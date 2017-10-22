@@ -10,8 +10,11 @@ import com.nasa.marsprojects.marsrobot.model.Coordinate;
 public class AreaFactory {
 	
 	private Integer maxYCoordinate;
+	
 	private Integer maxXCoordinate;
+	
 	private Integer minYCoordinate;
+	
 	private Integer minXCoordinate;
 
 	public Area create(){

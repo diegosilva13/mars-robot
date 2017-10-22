@@ -1,10 +1,7 @@
 package com.nasa.marsprojects.marsrobot.domain;
 
 public enum Position {
-	NORTH("N", 0, 1), 
-	EAST("E", 1, 0), 
-	SOUTH("S", 0, -1), 
-	WEST("W", -1, 0);
+	NORTH("N", 0, 1), EAST("E", 1, 0), SOUTH("S", 0, -1), WEST("W", -1, 0);
 
 	private final String label;
 	private final Integer valueToIncreaseX;
@@ -36,10 +33,8 @@ public enum Position {
 			return EAST;
 		case EAST:
 			return NORTH;
-		case WEST:
-			return SOUTH;
 		default:
-			return null;
+			return SOUTH;
 		}
 	}
 
@@ -51,10 +46,8 @@ public enum Position {
 			return WEST;
 		case EAST:
 			return SOUTH;
-		case WEST:
-			return NORTH;
 		default:
-			return null;
+			return NORTH;
 		}
 	}
 }

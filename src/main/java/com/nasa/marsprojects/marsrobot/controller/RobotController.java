@@ -11,7 +11,7 @@ import com.nasa.marsprojects.marsrobot.model.Robot;
 import com.nasa.marsprojects.marsrobot.service.RobotService;
 
 @RestController
-@RequestMapping("/robot")
+@RequestMapping("/mars-robot")
 public class RobotController {
 	
 	@Autowired

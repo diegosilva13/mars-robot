@@ -10,8 +10,11 @@ public class Coordinate implements Serializable{
 	
 	private Integer y;
 	
+	public Coordinate() {
+	}
+	
 	public Coordinate(Integer x, Integer y) {
-		super();
+		this();
 		this.x = x;
 		this.y = y;
 	}
