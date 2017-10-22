@@ -52,3 +52,20 @@ ou acessando a pasta target e executando diretament o *jar* gerado
 #/mars-robot/target/
 $  java -jar mars-robot-0.0.1-SNAPSHOT.jar
 ```
+
+### Via Docker
+Outra opção para executar o projeto é via docker.
+Acesse a raiz do projeto e execute o seguinte comando para gerar a imagem da aplicação
+
+```sh
+#/mars-robot/
+$  mvn docker:build
+```
+Após finalizado execute o próximo comando para criar o container com a aplicação.
+
+```sh
+#/mars-robot/
+$  docker-compose up
+```
+
+## Rest
