@@ -1,0 +1,10 @@
+version: '2'
+services:
+  
+  mars-robot:
+    image: com.nasa.marsproject.marsrobot/mars-robot:latest
+    mem_limit: 536870911
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
