@@ -15,3 +15,7 @@ Assuma que um robô se movimenta para o NORTE em relação ao eixo y. Ou seja, u
 Exemplo: Se o robô está na posição `(0,0,N)`, o comando `MML` fará ele chegar na posição `(0,2,W)`.
 
 ## Aplicação
+### Tecnologias
+* Java 8
+* Maven
+* Docker e Docker Compose (Opcionais)
