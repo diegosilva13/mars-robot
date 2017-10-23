@@ -46,7 +46,7 @@ Após a finalização vamos executar a aplicação, aqui temos duas opções, ex
 #/mars-robot/
 $  mvn spring-boot:run
 ```
-ou acessando a pasta target e executando diretament o *jar* gerado
+ou acessando a pasta target e executando diretamente o *jar* gerado
 
 ```sh
 #/mars-robot/target/
