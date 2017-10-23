@@ -80,7 +80,7 @@ $ POST https://mars-robot-controll.herokuapp.com/api/mars-robot/moveto/{{comand}
 O Foi disponibilizado o seguinte endpoint rest para possibilitar controlar o Robô:
 ```sh
 $ POST http://localhost:8080/api/mars-robot/moveto/{command}
-#Exmplo: http://localhost:8080/api/mars-robot/moveto/MML
+#Exemplo: http://localhost:8080/api/mars-robot/moveto/MML
 ```
 
 #### Parâmetros
