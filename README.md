@@ -67,6 +67,13 @@ Após finalizado execute o próximo comando para criar o container com a aplica�
 #/mars-robot/
 $  docker-compose up
 ```
+### Via Heroku
+Essa versão também está disponível no Heroku. Para realizar o teste basta faça uma requisição POST como descrito abaixo:
+
+```sh
+$ POST mars-robot-controll.herokuapp.com/api/mars-robot/moveto/{{comand}}
+#Exemplo: https://mars-robot-controll.herokuapp.com/api/mars-robot/moveto/MML
+```
 
 ## Api Rest
 
