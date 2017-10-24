@@ -1,5 +1,5 @@
 # Mars Robot Project
-[![Release Version](https://img.shields.io/github/release/diegosilva13/mars-robot.svg)](https://github.com/diegosilva13/mars-robot/tree/v1.0)
+[![Release Version](https://img.shields.io/github/release/diegosilva13/mars-robot.svg)](https://github.com/diegosilva13/mars-robot/tree/v2.1)
 [![Build Status](https://travis-ci.org/diegosilva13/mars-robot.svg?branch=master)](https://travis-ci.org/diegosilva13/mars-robot)
 [![codecov](https://codecov.io/gh/diegosilva13/mars-robot/branch/master/graph/badge.svg)](https://codecov.io/gh/diegosilva13/mars-robot)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a909853e988e408abde3faef88049776)](https://www.codacy.com/app/diegosilva13/mars-robot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diegosilva13/mars-robot&amp;utm_campaign=Badge_Grade)
@@ -25,13 +25,14 @@ Exemplo: Se o robô está na posição `(0,0,N)`, o comando `MML` fará ele cheg
 ## Aplicação
 ### Tecnologias
 
-Para o desenvolvimento da aplicação foram utilizadas as seguintes stack:
+Para o desenvolvimento da aplicação foram utilizadas a seguinte stack:
 
 * Java 8
 * Maven
 * Docker e Docker Compose (Opcionais)
 
-### Executando
+## Executando
+
 ### Via JAR
 
 Primeiro vamos precisar executar o comanndo para que o maven baixe as dependencias necessárias para o projeto e faça o build da aplicação. Acesse a raiz do projeto e execute:
@@ -40,13 +41,7 @@ Primeiro vamos precisar executar o comanndo para que o maven baixe as dependenci
 #/mars-robot/
 $ mvn clean install
 ```
-Após a finalização vamos executar a aplicação, aqui temos duas opções, executando na raiz do projeto o seguinte comando
-
-```sh
-#/mars-robot/
-$  mvn spring-boot:run
-```
-ou acessando a pasta target e executando diretament o *jar* gerado
+após finalizar acesse a pasta target e execute o **jar** gerado com o seguinte comando
 
 ```sh
 #/mars-robot/target/
@@ -67,5 +62,33 @@ Após finalizado execute o próximo comando para criar o container com a aplica�
 #/mars-robot/
 $  docker-compose up
 ```
+### Via Heroku
+Essa versão também está disponível no Heroku. Para realizar o teste basta fazer uma requisição POST como descrito abaixo:
 
-## Rest
+```sh
+$ POST https://mars-robot-controll.herokuapp.com/api/mars-robot/moveto/{{comand}}
+#Exemplo: https://mars-robot-controll.herokuapp.com/api/mars-robot/moveto/MML
+```
+
+## Api Rest
+
+O Foi disponibilizado o seguinte endpoint rest para possibilitar controlar o Robô:
+```sh
+$ POST http://localhost:8080/api/mars-robot/moveto/{command}
+#Exemplo: http://localhost:8080/api/mars-robot/moveto/MML
+```
+
+#### Parâmetros
+| Nome | Valor |
+| ---- | ----- |
+| `command` | Uma string simples, que pode conter as letras L, R e M. Exemplo: `MML` |
+
+#### Respostas
+
+| Código | Quando ocorre | Resposta |
+| ---- | ----- | ----- |
+| `200` | Quano o robô é movimentado com sucesso, sua posição é retornada | `(0,2,W)` |
+| `400` | Quando passado um comando inválido | Um ou mais comandos informado estão inválido. |
+| `400` | Quando o robô excede os limites da área configurada. | O robô excedeu os limites da área configurada. |
+| `500` | Quando ocorre um erro inesperado no servidor | Ocorreu um erro inesperado, por favor entre em contato com o suporte técnico. |
+
