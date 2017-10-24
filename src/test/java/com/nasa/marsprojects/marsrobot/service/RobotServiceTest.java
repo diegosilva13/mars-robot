@@ -68,19 +68,13 @@ public class RobotServiceTest {
 	}
 	
 	@Test(expected = ExceededBoundaryException.class)
-	public void shouldThrowExceededBoundaryException() {
+	public void shouldThrowExceededBoundaryExceptionOnlyMoving() {
 		String command = "MMMMMMMMMMMMMMMMMMMMMMMM";
 		robotService.moveTo(command);
 	}
 	
 	@Test(expected = ExceededBoundaryException.class)
-	public void shouldThrowExceededBoundaryExceptionInX() {
-		String command = "MMRMLMMMRMMMMRMLM";
-		robotService.moveTo(command);
-	}
-	
-	@Test(expected = ExceededBoundaryException.class)
-	public void shouldThrowExceededBoundaryExceptionInX1a() {
+	public void shouldThrowExceededBoundaryException() {
 		String command = "MMRMLMMMLMM";
 		robotService.moveTo(command);
 	}
