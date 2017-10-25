@@ -54,7 +54,7 @@ Acesse a raiz do projeto e execute o seguinte comando para gerar a imagem da apl
 
 ```sh
 #/mars-robot/
-$  mvn docker:build
+$  mvn dockerfile:build
 ```
 Após finalizado execute o próximo comando para criar o container com a aplicação.
 
